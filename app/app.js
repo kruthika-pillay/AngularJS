@@ -1,9 +1,10 @@
+
+
 var sampleApp = angular.module('artApp', ['ngRoute']);
 
-sampleApp.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
-           when('/Home', {
+sampleApp.config(function($routeProvider) {
+        $routeProvider
+           .when('/Home', {
                 templateUrl: 'index.html'               
             }).
             when('/About', {
@@ -21,8 +22,11 @@ sampleApp.config(['$routeProvider',
               //  controller: 'usersController',
              //   controllerAs: 'routeVM',
             }).
+            when('/View Cart',{
+                templateUrl:'features/cart.html',
+            }).
              
             otherwise({
                 redirectTo: '/Home'
             });
-    }]);
+    });
